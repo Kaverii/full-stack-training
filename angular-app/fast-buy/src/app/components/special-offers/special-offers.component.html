@@ -1,0 +1,10 @@
+<section class="special-offers">
+  <h2>Special Offers</h2>
+  <div class="offers-grid">
+    <div class="offer-card" *ngFor="let offer of offers">
+      <h3>{{offer.title}}</h3>
+      <p>{{offer.description}}</p>
+      <button class="offer-button">{{offer.buttonText}}</button>
+    </div>
+  </div>
+</section>

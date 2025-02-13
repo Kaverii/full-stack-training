@@ -1,0 +1,46 @@
+<div class="product-details">
+  <div class="loading-error-container" *ngIf="loading || error">
+    <div class="loading" *ngIf="loading">Loading product details...</div>
+    <div class="error" *ngIf="error">
+      Failed to load product details. Please try again later.
+    </div>
+  </div>
+
+  <div class="product-container" *ngIf="!loading && !error && product">
+    <div class="product-image">
+      <img [src]="product.image" [alt]="product.title">
+    </div>
+
+    <div class="product-info">
+      <div class="category">{{product.category | titlecase}}</div>
+      <h1 class="title">{{product.title}}</h1>
+      
+      <div class="rating">
+        <div class="stars">
+          Rating: {{product.rating.rate}} / 5
+        </div>
+        <div class="reviews">
+          ({{product.rating.count}} reviews)
+        </div>
+      </div>
+
+      <div class="price-container">
+        <div class="original-price">${{product.price}}</div>
+        <div class="discounted-price">
+          ${{getDiscountPrice(product.price) | number:'1.2-2'}}
+        </div>
+        <div class="discount-tag">20% OFF</div>
+      </div>
+
+      <div class="description">
+        <h2>Description</h2>
+        <p>{{product.description}}</p>
+      </div>
+
+      <div class="actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+$theme-color: #007bff;
+$theme-contrast-color: #fff;
+$text-color: #333;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $text-color;
+}
