@@ -1,0 +1,234 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header and Navigation - demonstrating flex and position */
+header {
+    position: fixed; /* Position property example */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 1rem;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex; /* Flex property example */
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transition property example */
+}
+
+nav a:hover {
+    color: #00ff9d;
+}
+
+/* Hero section - demonstrating flex centering */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+/* About section - demonstrating grid and flex */
+#about {
+    padding: 4rem 2rem;
+}
+
+.about-content {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.profile-image {
+    flex: 1;
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 300px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 2;
+}
+
+/* Skills section - demonstrating grid */
+#skills {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; /* Transition property example */
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Projects section - demonstrating grid */
+#projects {
+    padding: 4rem 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; /* Transition property example */
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+/* Contact section - demonstrating flex and form styling */
+#contact {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 0.875rem;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.success-message {
+    color: #00aa00;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition property example */
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Section headers - consistent styling */
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+}
