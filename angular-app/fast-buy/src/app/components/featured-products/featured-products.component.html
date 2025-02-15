@@ -1,0 +1,32 @@
+<section class="featured-products">
+  <h2>Featured Products</h2>
+  
+  <div class="loading-error-container" *ngIf="loading || error">
+    <div class="loading" *ngIf="loading">Loading featured products...</div>
+    <div class="error" *ngIf="error">
+      Failed to load products. Please try again later.
+    </div>
+  </div>
+
+  <div class="product-grid" *ngIf="!loading && !error">
+    <div class="product-card" *ngFor="let product of featuredProducts" [routerLink]="['/product', product.id]">
+      <div class="product-image">
+        <img [src]="product.image" [alt]="product.title">
+        <span class="discount-badge">
+          -20%
+        </span>
+      </div>
+      <div class="product-info">
+        <h3>{{product.title}}</h3>
+        <div class="price-container">
+          <p class="original-price">${{product.price}}</p>
+          <p class="discounted-price">${{getDiscountPrice(product.price) | number:'1.2-2'}}</p>
+        </div>
+        <div class="rating">
+          Rating: {{product.rating.rate}} ({{product.rating.count}} reviews)
+        </div>
+        <button class="add-to-cart" (click)="$event.stopPropagation()">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
