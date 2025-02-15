@@ -1,0 +1,17 @@
+<section class="categories">
+  <h2>Shop by Category</h2>
+
+  <div class="loading-error-container" *ngIf="loading || error">
+    <div class="loading" *ngIf="loading">Loading categories...</div>
+    <div class="error" *ngIf="error">
+      Failed to load categories. Please try again later.
+    </div>
+  </div>
+
+  <div class="category-grid" *ngIf="!loading && !error">
+    <div class="category-card" *ngFor="let category of categories">
+      <span class="category-icon">{{category.icon}}</span>
+      <h3>{{category.name | titlecase}}</h3>
+    </div>
+  </div>
+</section>

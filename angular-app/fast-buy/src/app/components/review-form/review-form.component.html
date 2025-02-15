@@ -1,0 +1,34 @@
+<div class="review-form-container">
+  <h2>Leave a Review</h2>
+  <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userName">Name</label>
+      <input id="userName" type="text" formControlName="userName" />
+      <div class="error" *ngIf="reviewForm.get('userName')?.invalid && reviewForm.get('userName')?.touched">
+        <small *ngIf="reviewForm.get('userName')?.errors?.['required']">Name is required.</small>
+        <small *ngIf="reviewForm.get('userName')?.errors?.['minlength']">Name must be at least 3 characters long.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="feedback">Feedback</label>
+      <textarea id="feedback" formControlName="feedback"></textarea>
+      <div class="error" *ngIf="reviewForm.get('feedback')?.invalid && reviewForm.get('feedback')?.touched">
+        <small *ngIf="reviewForm.get('feedback')?.errors?.['required']">Feedback is required.</small>
+        <small *ngIf="reviewForm.get('feedback')?.errors?.['minlength']">Feedback must be at least 10 characters long.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="starRating">Star Rating</label>
+      <input id="starRating" type="number" formControlName="starRating" min="1" max="5" />
+      <div class="error" *ngIf="reviewForm.get('starRating')?.invalid && reviewForm.get('starRating')?.touched">
+        <small *ngIf="reviewForm.get('starRating')?.errors?.['required']">Star rating is required.</small>
+        <small *ngIf="reviewForm.get('starRating')?.errors?.['min']">Rating must be at least 1.</small>
+        <small *ngIf="reviewForm.get('starRating')?.errors?.['max']">Rating cannot exceed 5.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="reviewForm.invalid">Submit Review</button>
+  </form>
+</div>
